@@ -1,0 +1,33 @@
+# envoi — per-host backup configuration
+# Copy to backup.conf (gitignored) or point ENVOI_CONF at another file.
+# All values can also be set as environment variables; env wins over this file.
+
+# Where snapshots go. REQUIRED. On our hosts this is a path on the D: drive.
+ENVOI_DEST=/mnt/d/example-backups
+
+# Tree to back up (defaults to $HOME).
+ENVOI_HOME_DIR=/home/youruser
+
+# Sentinel: a path that must exist inside every archive. Pick something
+# small and stable that only disappears if things are deeply wrong.
+ENVOI_SENTINEL=.profile
+
+# Mount point that must be present before backing up (protects against
+# writing onto the root filesystem when the backup drive is unplugged).
+ENVOI_MOUNT=/mnt/d
+
+# Refuse to run as any other user (keeps cron from ever running this as root).
+ENVOI_EXPECT_USER=youruser
+
+# Label used in logs (default: hostname).
+ENVOI_LABEL=yourhost
+
+# Space-separated extra excludes, e.g. container storage:
+# ENVOI_EXTRA_EXCLUDES=".local/share/containers containers/n8n/redis"
+
+# Override the excludes file location (default: ./backup-excludes.txt next to the script)
+# ENVOI_EXCLUDES_FILE=/path/to/backup-excludes.txt
+
+# Hard safety floors (defaults shown)
+# MIN_FREE_GB=50
+# MIN_MEMBERS=100

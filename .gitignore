@@ -1,0 +1,10 @@
+# machine-specific excludes — never commit (contains private paths)
+backup-excludes.txt
+
+# scratch / test output
+*.log
+.tmp-*/
+.bats*
+.DS_Store
+backup.conf
+backup-home.sh.bak

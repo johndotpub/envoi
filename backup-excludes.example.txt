@@ -1,0 +1,18 @@
+# Example exclude list for home-backup — copy to backup-excludes.txt and edit for your machine.
+# One path per line, relative to $HOME. '#' starts a comment.
+# Entries without a slash match that name at any depth; entries with a slash anchor at $HOME.
+# Anchor a bare name to $HOME root with a leading "./" (e.g. "./go" excludes only ~/go).
+
+# caches / toolchains (reinstallable)
+.cache
+.npm
+.pyenv
+.venv
+venv
+
+# runtime / scratch data (host-specific)
+.local/share/uv
+.config/gcloud
+
+# example: your own rebuildable research output
+# ./my-big-research-project/scratch
